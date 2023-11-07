@@ -1,4 +1,4 @@
 # Projeto-Pokedex-Curso-Angular
 
-<p>aplicando a API pokedex, praticando Rotas e LazyLoading. </p>
+<p>Aplicando a API pokedex, praticando Rotas e LazyLoading. </p>
  
