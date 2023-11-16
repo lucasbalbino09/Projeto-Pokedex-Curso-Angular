@@ -26,7 +26,7 @@ export class PokeApiService {
     )
   }
 
-  private apiGetPokemons(url: string): Observable<any> {
+   apiGetPokemons(url: string): Observable<any> {
     return this.http.get<any>(url).pipe(
       map(
         res => res
