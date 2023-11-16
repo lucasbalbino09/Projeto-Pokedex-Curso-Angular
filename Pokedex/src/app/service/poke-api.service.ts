@@ -1,9 +1,36 @@
 import { Injectable } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http';
+//observable
+import { Observable } from 'rxjs';
+import { tap, map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
 export class PokeApiService {
 
-  constructor() { }
+  private url: string = 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=100';
+  constructor(
+    private http: HttpClient
+  ) { }
+
+  public apiListAllPokemons(): Observable<any> {
+    return this.http.get<any>(this.url).pipe(
+      tap(res => res),
+      tap(res => {
+        res.results.map((pokemonsMap: any) => {
+          this.apiGetPokemons(pokemonsMap.url).subscribe(
+            res => pokemonsMap.status = res
+          )
+        })
+      })
+    )
+  }
+
+  private apiGetPokemons(url: string): Observable<any> {
+    return this.http.get<any>(url).pipe(
+      map(
+        res => res
+      )
+    )
+  }
 }

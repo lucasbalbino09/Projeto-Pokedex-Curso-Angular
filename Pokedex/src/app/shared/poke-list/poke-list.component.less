@@ -1,64 +1,69 @@
 @import '../../config-less/variables.less';
 
 :host {
-    display: flex;
-    justify-content: space-between;
-
-    padding: 20px 0;
-    .pokemon {
-        position: relative;
+    .listagem {
         display: flex;
-        width: calc(49% - 2.5rem);
-        margin: 5px;
-        padding: 20px;        
-        height: calc(157px - 40px);        
-        background: var(--branco);
-        border-radius: 10px;
-        color: var(--primary-color);
-        text-decoration: none;
-        &-status {
+        justify-content: space-between;
+        padding: 20px 0;
+        flex-wrap: wrap;
 
-            h2 {
-                font-size: 22px;
-                font-style: italic;
-                font-weight: 700;
-                margin-bottom: 10px;
-                
-                
+        .pokemon {
+            position: relative;
+            display: flex;
+            width: calc(49% - 2.5rem);
+            padding: 20px;
+            height: calc(157px - 40px);
+            background: var(--branco);
+            border-radius: 10px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            text-decoration: none;
+
+            &-status {
+
+                h2 {
+                    font-size: 22px;
+                    font-style: italic;
+                    font-weight: 700;
+                    margin-bottom: 10px;
+                    text-transform: capitalize;
+                }
+
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                li {
+                    display: flex;
+                    background-color: var(--cinza);
+                    font-size: 10px;
+                    font-weight: 400;
+                    justify-content: center;
+                    align-items: center;
+                    width: 60px;
+                    margin-bottom: 5px;
+                    border-radius: 50px;
+
+                }
             }
 
-            ul{
+            &-imagem {
+                position: absolute;
                 display: flex;
-                flex-direction: column;
-            }
-            li{
-                display: flex;
-                background-color: var(--cinza);
-                font-size: 10px;
-                font-weight: 400;
                 justify-content: center;
                 align-items: center;
-                width: 60px;
-                margin-bottom: 5px;
-                border-radius: 50px;
+                height: 90px;
+                width: 110px;
+                bottom: 20px;
+                right: 20px;
+                background: url('../../../assets/Bolinhas.png') no-repeat;
 
+                img {
+                    width: 60px;
+                }
             }
         }
-        &-imagem{
-            position: absolute;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 90px;
-            width: 110px;
-            bottom: 20px;
-            right: 20px;
-            background: url('../../../assets/Bolinhas.png') no-repeat;
 
-            img{
-                width: 80px;
-            }
-        }
     }
-
 }
